@@ -348,7 +348,7 @@ describe('official vector tests ', function () {
         ]);
 
         $plaintext = hex2bin('0123456789abcdeffedcba9876543210');
-        $encrypted = $sm4->encryptHex($plaintext, false); // 不自动填充
+        $encrypted = $sm4->encrypt($plaintext, false); // 不自动填充
         $ciphertext = bin2hex($encrypted);
 
         expect($ciphertext)->toBe('681edf34d206965e86b3e94f536e4246');
