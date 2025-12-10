@@ -1,5 +1,6 @@
 # laravel-gm-crypto  国密算法扩展包
- Laravel 国密算法（SM3/SM4）扩展包，支持 SM3 哈希算法和 SM4 对称加密算法。
+
+Laravel 国密算法（SM3/SM4）扩展包，支持 SM3 哈希算法和 SM4 对称加密算法。
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![PHP Version](https://img.shields.io/badge/php-%3E%3D8.2-blue.svg)](https://php.net)
@@ -260,8 +261,8 @@ public function handle(Request $request, Closure $next)
 
 ## 依赖要求
 
-- PHP >= 8.0
-- Laravel >= 9.0
+- PHP >= 8.2
+- Laravel >= 10
 - OpenSSL 扩展
 
 ## 性能优化
@@ -287,12 +288,6 @@ MIT License
 ## 相关资源
 
 - [国密算法标准文档](http://www.gmbz.org.cn/)
-- [SM3 密码杂凑算法](http://www.gmbz.org.cn/main/viewfile/2018011001400692565.html)
-- [SM4 分组密码算法](http://www.gmbz.org.cn/main/viewfile/2018011001400691501.html)
-
-## 作者
-
-Your Name - your.email@example.com
 
 ## 更新日志
 
