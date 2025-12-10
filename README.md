@@ -81,15 +81,15 @@ return [
 use Xgrug\LaravelGmCrypto\Facades\GmCrypto;
 
 // 计算 SM3 哈希
-$hash = GmCrypto::sm3Hash('Hello World');
-// 输出: 44f0061e69fa6fdfc290c494654a05dc0c053da7e5c52b84ef93a9d67d3fff88
+$hash = GmCrypto::sm3Hash('abc');
+// 输出: 66c7f0f462eeedd9d1f2d46bdc10e4e24167c4875cf2f7a2297da02b8f4ba8e0
 
 // 验证哈希
-$isValid = GmCrypto::sm3Verify('Hello World', $hash);
+$isValid = GmCrypto::sm3Verify('abc', $hash);
 // 返回: true
 
 // HMAC-SM3
-$hmac = GmCrypto::sm3Hmac('Hello World', 'secret-key');
+$hmac = GmCrypto::sm3Hmac('abc', 'secret-key');
 ```
 
 ### SM4 对称加密
@@ -97,7 +97,7 @@ $hmac = GmCrypto::sm3Hmac('Hello World', 'secret-key');
 ```php
 use Xgrug\LaravelGmCrypto\Facades\GmCrypto;
 
-$plaintext = '敏感数据';
+$plaintext = '0123456789abcdeffedcba9876543210';
 
 // 加密（返回 Base64）
 $encrypted = GmCrypto::sm4Encrypt($plaintext);
@@ -167,6 +167,14 @@ $encrypted = $sm4->encrypt('明文');
 ```
 
 ### 自定义配置
+
+```php
+use Xgrug\LaravelGmCrypto\SM3;
+
+$sm3 = new SM3();
+
+$encrypted = $sm3->hash('abc');
+```
 
 ```php
 use Xgrug\LaravelGmCrypto\SM4;
