@@ -1,0 +1,61 @@
+{
+  "name": "xgrug/laravel-gm-crypto",
+  "description": "Laravel extension package for Chinese National Cryptographic Algorithm SM3/SM4",
+  "type": "library",
+  "keywords": [
+    "laravel",
+    "sm3",
+    "sm4",
+    "guomi",
+    "crypto",
+    "chinese-cryptography"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "xgrug",
+      "email": "xgrug@qq.com"
+    }
+  ],
+  "require": {
+    "php": "^8.2",
+    "illuminate/support": "^12.0",
+    "ext-openssl": "*"
+  },
+  "require-dev": {
+    "orchestra/testbench": "^10",
+    "pestphp/pest": "^3.0",
+    "pestphp/pest-plugin-laravel": "^3.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Xgrug\\LaravelGmCrypto\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Xgrug\\LaravelGmCrypto\\Tests\\": "tests/"
+    },
+    "scripts": {
+      "test": "vendor/bin/pest",
+      "test-coverage": "vendor/bin/pest --coverage"
+    }
+  },
+  "config": {
+    "allow-plugins": {
+      "pestphp/pest-plugin": true
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Xgrug\\LaravelGmCrypto\\GmCryptoServiceProvider"
+      ],
+      "aliases": {
+        "GmCrypto": "Xgrug\\LaravelGmCrypto\\Facades\\GmCrypto"
+      }
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}
